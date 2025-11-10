@@ -4,14 +4,12 @@ import { SUPPORTED_LOCALES, DEFAULT_LOCALE, Locale, TIMEZONE } from "@/i18n-conf
 
 interface Props {
   children: ReactNode;
-  params: { locale: string } | Promise<{ locale: string }>;
+  params: { locale: string };
 }
 
 export default async function LocaleLayout({ children, params }: Props) {
-  const resolvedParams = await params;
-
-  const locale: Locale = SUPPORTED_LOCALES.includes(resolvedParams.locale as Locale)
-    ? (resolvedParams.locale as Locale)
+  const locale: Locale = SUPPORTED_LOCALES.includes(params.locale as Locale)
+    ? (params.locale as Locale)
     : DEFAULT_LOCALE;
 
   const messages = (await import(`../../messages/${locale}.json`)).default;
