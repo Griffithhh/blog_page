@@ -1,6 +1,12 @@
 import { ReactNode } from "react";
+
 import LocaleProvider from "@/components/WrapperProvider/WrapperProvider";
-import { SUPPORTED_LOCALES, DEFAULT_LOCALE, Locale, TIMEZONE } from "@/i18n-config";
+import {
+  SUPPORTED_LOCALES,
+  DEFAULT_LOCALE,
+  Locale,
+  TIMEZONE,
+} from "@/i18n-config";
 
 interface Props {
   children: ReactNode;
