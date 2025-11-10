@@ -1,0 +1,32 @@
+{
+  "hello": "Hallo",
+  "blogTitle": "Blog-Beitrag",
+
+  "add_blog": "Blog hinzufügen",
+  "title": "Titel",
+  "content": "Inhalt",
+  "submit": "Erstellen",
+  "loading": "Wird geladen...",
+  "not_found": "Blogbeitrag nicht gefunden",
+
+  "add_todo": "Aufgabe hinzufügen",
+  "title_required": "Bitte geben Sie einen Titel ein",
+  "description": "Beschreibung",
+  "no_todos": "Keine Aufgaben",
+  "todo_list": "Liste der Aufgaben",
+  "clear_all": "Alles löschen",
+
+  "login_welcome": "Willkommen zurück",
+  "login_subtitle": "Melden Sie sich an",
+  "login_email": "Email",
+  "login_password": "Passwort",
+  "login_button": "Einloggen",
+  "login_no_account": "Noch keinen Account? Registrieren",
+  "signup_no_account": "How keinen Account? Log in",
+  "signup_title": "Willkommen",
+  "signup_subtitle": "Konto erstellen",
+  "signup_full_name": "Vollständiger Name",
+  "signup_email": "Email",
+  "signup_password": "Passwort",
+  "signup_button": "Registrieren"
+}

@@ -1,0 +1,32 @@
+{
+  "hello": "Hello",
+  "blogTitle": "Blog Post",
+
+  "add_blog": "Add Blog",
+  "title": "Title",
+  "content": "Content",
+  "submit": "Create",
+  "loading": "Loading...",
+  "not_found": "Blog not found",
+
+  "add_todo": "Add To-Do",
+  "title_required": "Please enter a title",
+  "description": "Description",
+  "no_todos": "No todos yet",
+  "todo_list": "List of todos",
+  "clear_all": "Clear all",
+
+  "login_welcome": "Welcome back",
+  "login_subtitle": "Log in",
+  "login_email": "Email",
+  "login_password": "Password",
+  "login_button": "Log in",
+  "login_no_account": "Don’t have an account? Sign up",
+  "signup_no_account": "Already have an account? Log in",
+  "signup_title": "Welcome",
+  "signup_subtitle": "Create an account",
+  "signup_full_name": "Full Name",
+  "signup_email": "Email",
+  "signup_password": "Password",
+  "signup_button": "Sign up"
+}

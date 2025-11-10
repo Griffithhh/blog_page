@@ -1,21 +1,36 @@
-Dice Game
-This is a number-guessing game built with Next.js. Players make bets on "Under" or "Over" a selected value, and the game generates a random number to determine the outcome.
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-🛠️ Prerequisites
-Ensure you have the following installed:
+## Getting Started
 
-Node.js (version 18.18 or later)
+First, run the development server:
 
-npm (comes with Node.js)
-Install Dependencies
-npm install 
-Run the Development Server
+```bash
 npm run dev
-Access the application at http://localhost:3000 in your browser.
-npm run dev: Starts the development server.
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-npm run build: Builds the application for production.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-npm run start: Starts the production server.
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-npm run lint: Runs the linter to check for code issue
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
