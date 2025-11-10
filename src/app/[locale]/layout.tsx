@@ -8,25 +8,17 @@ import {
   TIMEZONE,
 } from "@/i18n-config";
 
-export default function LocaleLayout({
-  children,
-  params,
-}: {
+type Props = {
   children: ReactNode;
-  params: { locale: string };
-}) {
-  return <AsyncLocaleLayout params={params}>{children}</AsyncLocaleLayout>;
-}
+  params: Promise<{ locale: string }> | { locale: string };
+};
 
-async function AsyncLocaleLayout({
-  children,
-  params,
-}: {
-  children: ReactNode;
-  params: { locale: string };
-}) {
-  const locale: Locale = SUPPORTED_LOCALES.includes(params.locale as Locale)
-    ? (params.locale as Locale)
+export default async function LocaleLayout({ children, params }: Props) {
+  const resolvedParams = await Promise.resolve(params);
+  const locale: Locale = SUPPORTED_LOCALES.includes(
+    resolvedParams.locale as Locale,
+  )
+    ? (resolvedParams.locale as Locale)
     : DEFAULT_LOCALE;
 
   const messages = (await import(`../../messages/${locale}.json`)).default;
