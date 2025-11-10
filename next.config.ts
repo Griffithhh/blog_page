@@ -1,9 +1,7 @@
-/** @type {import('next').NextConfig} */
+import path from "path";
+
 const nextConfig = {
-  reactStrictMode: true,
-  experimental: {
-    appDir: true,
-  },
+  outputFileTracingRoot: path.join(__dirname, "../../"),
 };
 
 export default nextConfig;

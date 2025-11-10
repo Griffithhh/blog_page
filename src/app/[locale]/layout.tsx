@@ -1,41 +1,36 @@
 import { ReactNode } from "react";
+import { HeroUIProvider } from "@heroui/react";
+import { ToastContainer } from "react-toastify";
 
-import LocaleProvider from "@/components/WrapperProvider/WrapperProvider";
+import WrapperProvider from "@/components/WrapperProvider/WrapperProvider";
 import {
   SUPPORTED_LOCALES,
   DEFAULT_LOCALE,
-  Locale,
   TIMEZONE,
+  Locale,
 } from "@/i18n-config";
+import "react-toastify/dist/ReactToastify.css";
 
-export default function LocaleLayout({
-  children,
-  params,
-}: {
-  children: ReactNode;
-  params: { locale: string };
-}) {
-  return (
-    <LocaleLayoutContent locale={params.locale}>{children}</LocaleLayoutContent>
-  );
-}
+export default function LocaleLayout(props: any) {
+  const { children, params } = props as {
+    children: ReactNode;
+    params: { locale: string };
+  };
 
-async function LocaleLayoutContent({
-  children,
-  locale: rawLocale,
-}: {
-  children: ReactNode;
-  locale: string;
-}) {
-  const locale: Locale = SUPPORTED_LOCALES.includes(rawLocale as Locale)
-    ? (rawLocale as Locale)
+  const locale: Locale = SUPPORTED_LOCALES.includes(params.locale as Locale)
+    ? (params.locale as Locale)
     : DEFAULT_LOCALE;
 
-  const messages = (await import(`../../messages/${locale}.json`)).default;
+  const messages: Record<string, string> = require(
+    `../../messages/${locale}.json`,
+  );
 
   return (
-    <LocaleProvider locale={locale} messages={messages} timeZone={TIMEZONE}>
-      {children}
-    </LocaleProvider>
+    <WrapperProvider locale={locale} messages={messages} timeZone={TIMEZONE}>
+      <HeroUIProvider>
+        {children}
+        <ToastContainer autoClose={3000} position="top-right" />
+      </HeroUIProvider>
+    </WrapperProvider>
   );
 }

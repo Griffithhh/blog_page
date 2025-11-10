@@ -2,11 +2,9 @@ import { NextResponse } from "next/server";
 
 import { createClient } from "../../../../../utils/supabase/client";
 
-export async function GET(
-  req: Request,
-  { params }: { params: { id: string } },
-) {
-  const { id } = params;
+export async function GET(req: Request, { params }: any) {
+  const id = params.id as string;
+
   const { data, error } = await createClient()
     .from("blogs")
     .select("*")
