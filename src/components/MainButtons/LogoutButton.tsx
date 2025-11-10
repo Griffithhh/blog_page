@@ -1,7 +1,8 @@
-'use client';
+"use client";
 
 import { Button } from "@heroui/react";
 import { useRouter, usePathname } from "next/navigation";
+
 import { createClient } from "../../../utils/supabase/client";
 
 export default function MainButtons() {
@@ -11,52 +12,52 @@ export default function MainButtons() {
 
   const handleLogout = async () => {
     await supabase.auth.signOut();
-    router.push('/login');
+    router.push("/login");
     console.log("session finished");
   };
 
   const switchLocale = (locale: "en" | "de") => {
+    const segments = pathname.split("/").filter(Boolean);
 
-    const segments = pathname.split('/').filter(Boolean);
     segments[0] = locale;
-    router.push('/' + segments.join('/'));
+    router.push("/" + segments.join("/"));
   };
 
   return (
     <div className="flex gap-3 items-center">
       <Button
-        onPress={() => router.push('/blog')}
         className="bg-gray-800 text-white px-6 py-2 rounded-lg"
+        onPress={() => router.push("/blog")}
       >
         Blog
       </Button>
       <Button
-        onPress={() => router.push('/')}
         className="bg-gray-800 text-white px-6 py-2 rounded-lg"
+        onPress={() => router.push("/")}
       >
         Main
       </Button>
       <Button
-        onPress={() => router.push('/api/debug')}
         className="bg-black text-white px-6 py-2 rounded-lg"
+        onPress={() => router.push("/api/debug")}
       >
         Check Session
       </Button>
       <Button
-        onPress={() => switchLocale('en')}
         className="bg-black text-white px-4 py-2 rounded-lg"
+        onPress={() => switchLocale("en")}
       >
         EN
       </Button>
       <Button
-        onPress={() => switchLocale('de')}
         className="bg-black text-white px-4 py-2 rounded-lg"
+        onPress={() => switchLocale("de")}
       >
         DE
       </Button>
       <Button
-        onPress={handleLogout}
         className="bg-black text-white px-6 py-2 rounded-lg"
+        onPress={handleLogout}
       >
         Logout
       </Button>

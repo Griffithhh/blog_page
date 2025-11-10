@@ -1,6 +1,5 @@
-
-import BlogList from '@/components/Blog/BlogList';
-import BlogForm from '@/components/Blog/BlogForm';
+import BlogList from "@/components/Blog/BlogList";
+import BlogForm from "@/components/Blog/BlogForm";
 
 export default function BlogPage() {
   return (

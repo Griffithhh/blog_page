@@ -1,9 +1,10 @@
-'use client';
+"use client";
 
-import { useTodoStore } from "../../../store/todoStore";
 import { Card, CardHeader, CardBody, Button, Divider } from "@heroui/react";
 import { Trash2 } from "lucide-react";
 import { useTranslations } from "next-intl";
+
+import { useTodoStore } from "../../../store/todoStore";
 
 export default function TodoListSection() {
   const t = useTranslations();
@@ -13,7 +14,7 @@ export default function TodoListSection() {
     return (
       <Card className="max-w-md mx-auto mt-8 p-6 text-center shadow-md">
         <CardBody>
-          <p className="text-gray-500">{t('no_todos')}</p>
+          <p className="text-gray-500">{t("no_todos")}</p>
         </CardBody>
       </Card>
     );
@@ -22,9 +23,9 @@ export default function TodoListSection() {
   return (
     <Card className="max-w-md mx-auto mt-10 shadow-lg">
       <CardHeader className="flex justify-between items-center">
-        <h2 className="text-xl font-semibold">{t('todo_list')}</h2>
+        <h2 className="text-xl font-semibold">{t("todo_list")}</h2>
         <Button color="danger" variant="light" onPress={clearTodos}>
-          {t('clear_all')}
+          {t("clear_all")}
         </Button>
       </CardHeader>
 
@@ -40,8 +41,8 @@ export default function TodoListSection() {
               <h3 className="font-semibold">{todo.title}</h3>
               <Button
                 isIconOnly
-                size="sm"
                 color="danger"
+                size="sm"
                 variant="light"
                 onPress={() => removeTodo(index)}
               >
